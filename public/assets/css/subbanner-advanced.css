@@ -1,0 +1,159 @@
+/* Inner page sub-banner — cinematic, matches home hero language */
+
+.mx-subbanner.sub-banner-con {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c2340 !important;
+  background-image: none !important;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px -28px rgba(12, 35, 64, 0.45);
+  margin-bottom: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mx-subbanner__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mx-subbanner__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      125deg,
+      rgba(8, 24, 44, 0.88) 0%,
+      rgba(15, 58, 92, 0.78) 48%,
+      rgba(31, 111, 139, 0.72) 100%
+    ),
+    linear-gradient(0deg, rgba(8, 24, 44, 0.35) 0%, transparent 55%);
+}
+
+.mx-subbanner__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 40%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 20%, transparent 75%);
+}
+
+.mx-subbanner .main-container {
+  position: relative;
+  z-index: 1;
+  padding: 36px 16px 40px;
+}
+
+.mx-subbanner__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.mx-subbanner__crumbs {
+  margin-bottom: 12px;
+}
+
+.mx-subbanner__crumbs ol {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 14px;
+  list-style: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mx-subbanner__crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mx-subbanner__crumbs li:not(:last-child)::after {
+  content: "/";
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: 2px;
+}
+
+.mx-subbanner__crumbs a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+}
+
+.mx-subbanner__crumbs a:hover {
+  color: #fff;
+}
+
+.mx-subbanner__crumbs span[aria-current="page"] {
+  color: #fff;
+}
+
+.mx-subbanner h1 {
+  margin: 0 0 12px !important;
+  color: #fff !important;
+  font-size: clamp(26px, 4vw, 36px) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.mx-subbanner p {
+  margin: 0 auto !important;
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.mx-subbanner .breadcrumb-con,
+.mx-subbanner .breadcrumb {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .mx-subbanner.sub-banner-con {
+    min-height: 0;
+    border-radius: 16px;
+  }
+
+  .mx-subbanner .main-container {
+    padding: 28px 12px 32px;
+  }
+
+  .mx-subbanner h1 {
+    font-size: clamp(24px, 7vw, 30px) !important;
+  }
+
+  .mx-subbanner p {
+    font-size: 13px !important;
+  }
+}

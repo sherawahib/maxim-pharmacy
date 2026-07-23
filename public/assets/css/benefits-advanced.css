@@ -1,0 +1,188 @@
+/* Advanced benefits / trust strip */
+
+.mx-benefits {
+  position: relative;
+  z-index: 8;
+  margin-top: 28px;
+  margin-bottom: 18px;
+}
+
+/* Homepage only — soft overlap under tall hero */
+.mx-benefits.mx-benefits--overlap {
+  margin-top: -28px;
+}
+
+.mx-benefits__shell {
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid rgba(12, 35, 64, 0.06);
+  box-shadow:
+    0 24px 60px -32px rgba(12, 35, 64, 0.35),
+    0 2px 0 rgba(255, 255, 255, 0.8) inset;
+  padding: 34px 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mx-benefits__shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(27, 79, 130, 0.06), transparent 35%),
+    radial-gradient(circle at 88% 80%, rgba(200, 16, 46, 0.05), transparent 30%);
+  pointer-events: none;
+}
+
+.mx-benefits__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.mx-benefits__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: default;
+}
+
+.mx-benefits__item:hover {
+  transform: translateY(-4px);
+  background: rgba(245, 249, 255, 0.9);
+}
+
+.mx-benefits__icon {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.mx-benefits__glow {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, white) 0%, transparent 70%);
+  filter: blur(6px);
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mx-benefits__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 10px 28px -12px color-mix(in srgb, var(--accent) 55%, transparent),
+    0 0 0 1px rgba(12, 35, 64, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mx-benefits__icon img {
+  position: relative;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.mx-benefits__item:hover .mx-benefits__ring {
+  transform: scale(1.06);
+  box-shadow:
+    0 16px 34px -12px color-mix(in srgb, var(--accent) 65%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.mx-benefits__item:hover .mx-benefits__glow {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.mx-benefits__item:hover .mx-benefits__icon img {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.mx-benefits__copy h6 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0c2340;
+  line-height: 1.3;
+}
+
+.mx-benefits__copy p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7c90;
+  line-height: 1.5;
+}
+
+.mx-benefits__divider {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .mx-benefits__divider {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 18%;
+    bottom: 18%;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(12, 35, 64, 0.12),
+      transparent
+    );
+  }
+}
+
+@media (max-width: 991px) {
+  .mx-benefits,
+  .mx-benefits.mx-benefits--overlap {
+    margin-top: 20px;
+  }
+
+  .mx-benefits__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .mx-benefits__shell {
+    border-radius: 22px;
+    padding: 22px 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .mx-benefits__list {
+    grid-template-columns: 1fr;
+  }
+
+  .mx-benefits__item {
+    padding: 14px 12px;
+    gap: 16px;
+  }
+}
+
+@supports not (background: color-mix(in srgb, red 50%, white)) {
+  .mx-benefits__glow {
+    background: radial-gradient(circle, rgba(27, 79, 130, 0.18) 0%, transparent 70%);
+  }
+
+  .mx-benefits__ring {
+    box-shadow: 0 10px 28px -12px rgba(12, 35, 64, 0.25);
+  }
+}

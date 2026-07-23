@@ -1,0 +1,235 @@
+/* Our Services — continuous smooth marquee */
+
+.mx-services.featured-products-con {
+  position: relative;
+  overflow: hidden;
+}
+
+.mx-services__head .special-text {
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mx-services__sub {
+  max-width: 560px;
+  margin: 14px auto 0;
+  color: #5f7388;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.mx-services__marquee {
+  margin-top: 36px;
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+.mx-services__track {
+  display: flex;
+  width: max-content;
+  gap: 22px;
+  padding-inline: 22px;
+  animation: mxServicesMarquee 34s linear infinite;
+  will-change: transform;
+}
+
+.mx-services__marquee:hover .mx-services__track {
+  animation-play-state: paused;
+}
+
+.mx-services__slide {
+  flex: 0 0 auto;
+  width: min(320px, 78vw);
+}
+
+.mx-services__card.seller-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  box-shadow: 0 18px 40px -28px rgba(12, 35, 64, 0.3);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  margin-bottom: 0;
+}
+
+.mx-services__media.seller_image_box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 !important;
+  height: 210px;
+  flex-shrink: 0;
+}
+
+.mx-services__media figure,
+.mx-services__media figure img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+.mx-services__media figure img {
+  transition: transform 0.6s ease;
+}
+
+.mx-services__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12, 35, 64, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.mx-services__num {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  color: #c8102e;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.35);
+}
+
+.mx-services__body.seller_box_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 20px 24px !important;
+  background: #fff !important;
+}
+
+.mx-services__body .text_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.mx-services__body h5 {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #0c2340 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.3 !important;
+}
+
+.mx-services__body p {
+  color: #6b7c90 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 16px !important;
+  flex: 1;
+  min-height: 0;
+}
+
+.mx-services__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1b4f82;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.mx-services__link i {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.mx-services__card:hover {
+  border-color: rgba(200, 16, 46, 0.22);
+  box-shadow: 0 28px 50px -24px rgba(12, 35, 64, 0.42);
+}
+
+.mx-services__card:hover .mx-services__media figure img {
+  transform: scale(1.08);
+}
+
+.mx-services__card:hover .mx-services__link {
+  color: #c8102e;
+  gap: 12px;
+}
+
+.mx-services__card:hover .mx-services__link i {
+  transform: translateX(2px);
+}
+
+.mx-services.featured-products-con .seller-box:hover .seller_box_content {
+  background: #fff !important;
+}
+
+.mx-services.featured-products-con .seller-box:hover h5,
+.mx-services.featured-products-con .seller-box:hover .seller_box_content p {
+  color: inherit !important;
+}
+
+.mx-services__cta {
+  margin-top: 28px;
+}
+
+.mx-services__cta .primary_btn {
+  min-width: 200px;
+  box-shadow: 0 14px 30px -14px rgba(200, 16, 46, 0.55);
+}
+
+@keyframes mxServicesMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .mx-services__slide {
+    width: min(280px, 82vw);
+  }
+
+  .mx-services__track {
+    animation-duration: 28s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mx-services__track {
+    animation: none !important;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mx-services__slide:nth-child(n + 5) {
+    display: none;
+  }
+}
