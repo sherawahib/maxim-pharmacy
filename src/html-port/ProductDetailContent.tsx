@@ -39,8 +39,6 @@ export function ProductDetailContent({ productId }: { productId: string }) {
 
   useEffect(() => {
     document.body.style.overflow = "";
-    document.documentElement.classList.remove("mx-preloader-boot", "mx-preloader-lock");
-    document.body.classList.remove("mx-preloader-lock");
   }, [productId]);
 
   const related = useMemo(
