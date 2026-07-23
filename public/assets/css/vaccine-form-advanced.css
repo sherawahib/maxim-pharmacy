@@ -1,0 +1,320 @@
+/* Online vaccine registration form */
+
+.mx-vaxform__intro {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  text-align: center;
+  color: #5f7388;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.mx-vaxform__intro a {
+  color: #c8102e !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.mx-vaxform__form {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.mx-vaxform__panel {
+  margin: 0;
+  padding: 26px 24px;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 40px -32px rgba(12, 35, 64, 0.4);
+}
+
+.mx-vaxform__panel legend {
+  padding: 0 8px;
+  color: #0c2340;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.mx-vaxform__hint,
+.mx-vaxform__consent-text {
+  margin: 0 0 16px;
+  color: #5f7388;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.mx-vaxform__grid2,
+.mx-vaxform__grid3,
+.mx-vaxform__grid4 {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.mx-vaxform__grid2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.mx-vaxform__grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mx-vaxform__grid4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mx-vaxform__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.mx-vaxform__field > span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #3d5470;
+}
+
+.mx-vaxform__field input,
+.mx-vaxform__field select,
+.mx-vaxform__field textarea {
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(12, 35, 64, 0.12);
+  background: #f8fafc;
+  color: #0c2340;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+}
+
+.mx-vaxform__field textarea {
+  min-height: 120px;
+  padding: 12px 14px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.mx-vaxform__field input:focus,
+.mx-vaxform__field select:focus,
+.mx-vaxform__field textarea:focus {
+  border-color: #1b4f82;
+  background: #fff;
+}
+
+.mx-vaxform__vax-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.mx-vaxform__vax-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  background: #f7fafc;
+}
+
+.mx-vaxform__vax-row.is-on {
+  background: rgba(27, 79, 130, 0.06);
+  border-color: rgba(27, 79, 130, 0.22);
+}
+
+.mx-vaxform__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  color: #0c2340;
+  font-size: 14px;
+}
+
+.mx-vaxform__check input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: #c8102e;
+  flex: 0 0 auto;
+}
+
+.mx-vaxform__check strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.mx-vaxform__check em {
+  display: block;
+  font-style: normal;
+  color: #6b7c90;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.mx-vaxform__check--block {
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f5f8fb;
+}
+
+.mx-vaxform__arm {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.mx-vaxform__arm button,
+.mx-vaxform__yn button {
+  appearance: none;
+  border: 1px solid rgba(12, 35, 64, 0.12);
+  background: #fff;
+  color: #3d5470;
+  font-size: 12px;
+  font-weight: 800;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.mx-vaxform__arm button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mx-vaxform__arm button.is-active,
+.mx-vaxform__yn button.is-active {
+  background: #0c2340;
+  border-color: #0c2340;
+  color: #fff;
+}
+
+.mx-vaxform__screen {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mx-vaxform__screen li {
+  padding: 16px;
+  border-radius: 14px;
+  background: #f7fafc;
+  border: 1px solid rgba(12, 35, 64, 0.06);
+}
+
+.mx-vaxform__screen p {
+  margin: 0 0 12px;
+  color: #0c2340;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.mx-vaxform__yn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mx-vaxform__submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 8px 4px 0;
+}
+
+.mx-vaxform__submit-row p {
+  margin: 0;
+  color: #5f7388;
+  font-size: 14px;
+}
+
+.mx-vaxform__success {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 28px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  box-shadow: 0 28px 60px -36px rgba(12, 35, 64, 0.45);
+}
+
+.mx-vaxform__success-icon {
+  display: inline-flex;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(27, 122, 74, 0.1);
+  color: #1b7a4a;
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.mx-vaxform__success h2 {
+  margin: 0 0 10px;
+  color: #0c2340;
+}
+
+.mx-vaxform__success p {
+  margin: 0 0 22px;
+  color: #5f7388;
+}
+
+.mx-vaxform__success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 991px) {
+  .mx-vaxform__grid3,
+  .mx-vaxform__grid4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .mx-vaxform__grid2,
+  .mx-vaxform__grid3,
+  .mx-vaxform__grid4,
+  .mx-vaxform__vax-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mx-vaxform__arm {
+    width: 100%;
+  }
+
+  .mx-vaxform__arm button {
+    flex: 1;
+  }
+
+  .mx-vaxform__submit-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mx-vaxform__submit-row .mx-vax__reg--lg {
+    width: 100%;
+  }
+}

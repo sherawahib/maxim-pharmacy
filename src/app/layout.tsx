@@ -62,6 +62,9 @@ export default function RootLayout({
         <link href="/assets/css/cart-checkout-advanced.css" rel="stylesheet" />
         <link href="/assets/css/product-detail-advanced.css" rel="stylesheet" />
         <link href="/assets/css/preloader-advanced.css" rel="stylesheet" />
+        <link href="/assets/css/vaccinations-advanced.css" rel="stylesheet" />
+        <link href="/assets/css/vaccinations-cta.css" rel="stylesheet" />
+        <link href="/assets/css/vaccine-form-advanced.css" rel="stylesheet" />
       </head>
       <body>
         <a id="button" />

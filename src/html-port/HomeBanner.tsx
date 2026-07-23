@@ -138,6 +138,10 @@ export function HomeBanner() {
                       <i className="fas fa-shopping-bag" aria-hidden="true" />
                       Shop Now
                     </Link>
+                    <Link href="/vaccinations" className="mx-banner__btn mx-banner__btn--ghost">
+                      <i className="fas fa-syringe" aria-hidden="true" />
+                      Vaccination Clinics
+                    </Link>
                     <Link href="/transfer" className="mx-banner__btn mx-banner__btn--ghost">
                       <i className="fas fa-exchange-alt" aria-hidden="true" />
                       Transfer Rx

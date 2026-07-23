@@ -1,0 +1,361 @@
+/* Vaccination clinics page */
+
+.mx-vax__alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px 26px;
+  border-radius: 22px;
+  background:
+    linear-gradient(125deg, rgba(12, 35, 64, 0.96), rgba(27, 79, 130, 0.92));
+  color: #fff;
+  margin-bottom: 28px;
+  box-shadow: 0 24px 50px -34px rgba(12, 35, 64, 0.55);
+}
+
+.mx-vax__eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mx-vax__alert h2 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 3vw, 30px);
+  color: #fff;
+}
+
+.mx-vax__alert p {
+  margin: 0;
+  max-width: 54ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.mx-vax__walkin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 !important;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 13px !important;
+  font-weight: 700;
+  color: #fff !important;
+  white-space: nowrap;
+}
+
+.mx-vax__links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 42px;
+}
+
+.mx-vax__link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  text-decoration: none !important;
+  box-shadow: 0 16px 36px -30px rgba(12, 35, 64, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.mx-vax__link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(27, 79, 130, 0.28);
+}
+
+.mx-vax__link-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(27, 79, 130, 0.08);
+  color: #1b4f82;
+}
+
+.mx-vax__link strong {
+  color: #0c2340;
+  font-size: 15px;
+}
+
+.mx-vax__link em {
+  font-style: normal;
+  color: #6b7c90;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.mx-vax__head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.mx-vax__head--gap {
+  margin-top: 56px;
+}
+
+.mx-vax__head h2 {
+  margin: 8px 0 10px;
+  color: #0c2340;
+}
+
+.mx-vax__head p {
+  margin: 0;
+  color: #5f7388;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.mx-vax__table-wrap {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  background: #fff;
+  box-shadow: 0 20px 44px -34px rgba(12, 35, 64, 0.4);
+}
+
+.mx-vax__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.mx-vax__table th,
+.mx-vax__table td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(12, 35, 64, 0.08);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mx-vax__table th {
+  background: #0c2340;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mx-vax__table td {
+  color: #3d5470;
+}
+
+.mx-vax__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.mx-vax__table tbody tr:hover td {
+  background: #f7fafc;
+}
+
+.mx-vax__reg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #c8102e;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.mx-vax__reg:hover {
+  background: #0c2340;
+}
+
+.mx-vax__reg--lg {
+  min-height: 48px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.mx-vax__note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #f5f8fb;
+  color: #5f7388;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.mx-vax__note i {
+  color: #1b4f82;
+  margin-top: 3px;
+}
+
+.mx-vax__note p {
+  margin: 0;
+}
+
+.mx-vax__note a {
+  color: #c8102e !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.mx-vax__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mx-vax__card {
+  padding: 22px 20px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+}
+
+.mx-vax__card h3 {
+  margin: 0 0 12px;
+  color: #0c2340;
+  font-size: 17px;
+}
+
+.mx-vax__card p {
+  margin: 0 0 10px;
+  color: #5f7388;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.mx-vax__card p:last-child {
+  margin-bottom: 0;
+}
+
+.mx-vax__card strong {
+  color: #0c2340;
+}
+
+.mx-vax__footer-cta {
+  margin-top: 42px;
+  padding: 28px 26px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  box-shadow: 0 20px 44px -34px rgba(12, 35, 64, 0.4);
+}
+
+.mx-vax__footer-cta h3 {
+  margin: 0 0 8px;
+  color: #0c2340;
+  font-size: 22px;
+}
+
+.mx-vax__footer-cta p {
+  margin: 0;
+  color: #5f7388;
+  max-width: 46ch;
+}
+
+.mx-vax__footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mx-vax__ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(12, 35, 64, 0.14);
+  color: #0c2340 !important;
+  text-decoration: none !important;
+  font-weight: 800;
+  font-size: 13px;
+  background: #fff;
+}
+
+@media (max-width: 991px) {
+  .mx-vax__links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mx-vax__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .mx-vax__links {
+    grid-template-columns: 1fr;
+  }
+
+  .mx-vax__walkin {
+    white-space: normal;
+  }
+
+  .mx-vax__table {
+    min-width: 0;
+  }
+
+  .mx-vax__table thead {
+    display: none;
+  }
+
+  .mx-vax__table,
+  .mx-vax__table tbody,
+  .mx-vax__table tr,
+  .mx-vax__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .mx-vax__table tr {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(12, 35, 64, 0.08);
+  }
+
+  .mx-vax__table td {
+    padding: 6px 0;
+    border: 0;
+  }
+
+  .mx-vax__table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a8b9e;
+  }
+}
