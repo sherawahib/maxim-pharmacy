@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { AppProviders } from "@/html-port/AppProviders";
 import { FloatingCoupons } from "@/html-port/FloatingCoupons";
+import { FloatingVaccines } from "@/html-port/FloatingVaccines";
 import { GoogleTranslateHost } from "@/html-port/LanguageSwitcher";
 import { SiteFooter } from "@/html-port/SiteFooter";
 import { TemplateScripts } from "@/components/TemplateScripts";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <link href="/assets/css/cta-advanced.css" rel="stylesheet" />
         <link href="/assets/css/products-advanced.css" rel="stylesheet" />
         <link href="/assets/css/floating-coupons.css" rel="stylesheet" />
+        <link href="/assets/css/floating-vaccines.css" rel="stylesheet" />
         <link href="/assets/css/responsive-advanced.css" rel="stylesheet" />
         <link href="/assets/css/subbanner-advanced.css" rel="stylesheet" />
         <link href="/assets/css/inner-pages-advanced.css" rel="stylesheet" />
@@ -63,7 +65,6 @@ export default function RootLayout({
         <link href="/assets/css/product-detail-advanced.css" rel="stylesheet" />
         <link href="/assets/css/preloader-advanced.css" rel="stylesheet" />
         <link href="/assets/css/vaccinations-advanced.css" rel="stylesheet" />
-        <link href="/assets/css/vaccinations-cta.css" rel="stylesheet" />
         <link href="/assets/css/vaccine-form-advanced.css" rel="stylesheet" />
       </head>
       <body>
@@ -72,6 +73,7 @@ export default function RootLayout({
         <AppProviders>
           {children}
           <SiteFooter />
+          <FloatingVaccines />
           <FloatingCoupons />
         </AppProviders>
         <TemplateScripts />

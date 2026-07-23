@@ -1,0 +1,283 @@
+/* Floating vaccination forms — left edge, mirror of coupon tabs */
+
+.mx-float-vax {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 920;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 8px 8px 0;
+  pointer-events: none;
+}
+
+.mx-float-vax__close,
+.mx-float-vax__list,
+.mx-float-vax__item,
+.mx-float-vax__tab,
+.mx-float-vax__panel {
+  pointer-events: auto;
+}
+
+.mx-float-vax__close {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  border: 1px solid rgba(12, 35, 64, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #5f7388;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -12px rgba(12, 35, 64, 0.35);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.mx-float-vax__close:hover {
+  background: #0c2340;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.mx-float-vax__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mx-float-vax__item {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  animation: mxVaxFloatIn 0.55s ease both;
+}
+
+.mx-float-vax__tab {
+  position: relative;
+  z-index: 2;
+  width: 58px;
+  min-height: 92px;
+  padding: 12px 6px;
+  border: none;
+  border-radius: 0 14px 14px 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 8px 12px 28px -14px rgba(12, 35, 64, 0.45);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    min-height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.mx-float-vax__tab i {
+  font-size: 18px;
+}
+
+.mx-float-vax__item--navy .mx-float-vax__tab {
+  background: linear-gradient(160deg, #0c2340 0%, #1b4f82 100%);
+}
+
+.mx-float-vax__item--red .mx-float-vax__tab {
+  background: linear-gradient(160deg, #c8102e 0%, #9a0d24 100%);
+}
+
+.mx-float-vax__item--teal .mx-float-vax__tab {
+  background: linear-gradient(160deg, #1f6f8b 0%, #3f93bc 100%);
+}
+
+.mx-float-vax__tab-label {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  opacity: 0.95;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mx-float-vax__panel {
+  position: absolute;
+  left: 46px;
+  top: 50%;
+  width: 260px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-12px, -50%) scale(0.94);
+  transform-origin: left center;
+  transition: opacity 0.28s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.28s ease;
+  pointer-events: none;
+}
+
+.mx-float-vax__item:hover .mx-float-vax__panel,
+.mx-float-vax__item.is-open .mx-float-vax__panel,
+.mx-float-vax__item:focus-within .mx-float-vax__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.mx-float-vax__item:hover .mx-float-vax__tab,
+.mx-float-vax__item.is-open .mx-float-vax__tab,
+.mx-float-vax__item:focus-within .mx-float-vax__tab {
+  width: 62px;
+  min-height: 108px;
+  transform: translateX(4px);
+  box-shadow: 12px 16px 34px -12px rgba(12, 35, 64, 0.55);
+}
+
+.mx-float-vax__card {
+  padding: 16px 16px 14px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(12, 35, 64, 0.1);
+  box-shadow: 0 22px 48px -22px rgba(12, 35, 64, 0.45);
+}
+
+.mx-float-vax__eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a8b9e;
+}
+
+.mx-float-vax__card h4 {
+  margin: 0 0 6px;
+  color: #0c2340;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.mx-float-vax__card p {
+  margin: 0 0 12px;
+  color: #6b7c90;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.mx-float-vax__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #c8102e !important;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none !important;
+  transition: gap 0.2s ease;
+}
+
+.mx-float-vax__go:hover {
+  gap: 10px;
+}
+
+.mx-float-vax__go i {
+  font-size: 11px;
+}
+
+@keyframes mxVaxFloatIn {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mx-float-vax__item:nth-child(1) .mx-float-vax__tab {
+  animation: mxVaxBob 4.5s ease-in-out infinite;
+}
+
+.mx-float-vax__item:nth-child(2) .mx-float-vax__tab {
+  animation: mxVaxBob 4.5s ease-in-out infinite 0.6s;
+}
+
+.mx-float-vax__item:nth-child(3) .mx-float-vax__tab {
+  animation: mxVaxBob 4.5s ease-in-out infinite 1.2s;
+}
+
+.mx-float-vax__item:hover .mx-float-vax__tab,
+.mx-float-vax__item.is-open .mx-float-vax__tab,
+.mx-float-vax__item:focus-within .mx-float-vax__tab {
+  animation: none;
+}
+
+@keyframes mxVaxBob {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 991px) {
+  .mx-float-vax {
+    top: auto;
+    bottom: 88px;
+    transform: none;
+  }
+
+  .mx-float-vax__panel {
+    width: min(260px, calc(100vw - 72px));
+  }
+
+  .mx-float-vax__tab {
+    width: 48px;
+    min-height: 78px;
+  }
+
+  .mx-float-vax__tab i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .mx-float-vax__close {
+    margin-left: 6px;
+  }
+
+  .mx-float-vax__item:hover:not(.is-open) .mx-float-vax__panel {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-12px, -50%) scale(0.94);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mx-float-vax__item,
+  .mx-float-vax__tab,
+  .mx-float-vax__panel {
+    animation: none !important;
+    transition: none !important;
+  }
+}

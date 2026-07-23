@@ -7,7 +7,6 @@ import {
   PromoTicker,
 } from "@/html-port/PromotionsAdvanced";
 import { ServicesAdvanced } from "@/html-port/ServicesAdvanced";
-import { VaccinationsCta } from "@/html-port/VaccinationsCta";
 
 export function HomeContent() {
   return (
@@ -17,7 +16,6 @@ export function HomeContent() {
         <PromoTicker />
       </div>
       <PromotionsAdvanced />
-      <VaccinationsCta />
       <CategoriesAdvanced />
       <ServicesAdvanced />
       <ProductsAdvanced />
