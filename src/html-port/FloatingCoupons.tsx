@@ -39,19 +39,49 @@ const coupons = [
   },
 ];
 
+const HIDE_KEY = "mx-coupons-hidden-until";
+const HIDE_MS = 15 * 60 * 1000; // 15 minutes
+
+function readHiddenUntil(): number {
+  try {
+    const raw = sessionStorage.getItem(HIDE_KEY);
+    const until = raw ? Number(raw) : 0;
+    return Number.isFinite(until) ? until : 0;
+  } catch {
+    return 0;
+  }
+}
+
 export function FloatingCoupons() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [copied, setCopied] = useState<string | null>(null);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem("mx-coupons-hidden") === "1") {
-        setHidden(true);
-      }
-    } catch {
-      /* ignore */
+    const until = readHiddenUntil();
+    const now = Date.now();
+
+    if (until > now) {
+      setHidden(true);
+      const t = window.setTimeout(() => {
+        setHidden(false);
+        try {
+          sessionStorage.removeItem(HIDE_KEY);
+        } catch {
+          /* ignore */
+        }
+      }, until - now);
+      return () => window.clearTimeout(t);
     }
+
+    if (until) {
+      try {
+        sessionStorage.removeItem(HIDE_KEY);
+      } catch {
+        /* ignore */
+      }
+    }
+    setHidden(false);
   }, []);
 
   useEffect(() => {
@@ -61,12 +91,23 @@ export function FloatingCoupons() {
   }, [copied]);
 
   const hide = () => {
+    const until = Date.now() + HIDE_MS;
     setHidden(true);
     try {
-      sessionStorage.setItem("mx-coupons-hidden", "1");
+      sessionStorage.setItem(HIDE_KEY, String(until));
+      // migrate away from old permanent hide flag
+      sessionStorage.removeItem("mx-coupons-hidden");
     } catch {
       /* ignore */
     }
+    window.setTimeout(() => {
+      setHidden(false);
+      try {
+        sessionStorage.removeItem(HIDE_KEY);
+      } catch {
+        /* ignore */
+      }
+    }, HIDE_MS);
   };
 
   const copyCode = async (code: string) => {
