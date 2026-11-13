@@ -170,18 +170,18 @@ export function HomeBanner() {
               <figure className="mx-banner__shot mx-banner__shot--a">
                 <img
                   src="/assets/images/banner-img1.jpg"
-                  alt="Pharmacy care"
+                  alt="Maxim Pharmacy pick-up counter"
                   className="img-fluid"
                 />
-                <span className="mx-banner__shot-label">Care desk</span>
+                <span className="mx-banner__shot-label">Pick-up desk</span>
               </figure>
               <figure className="mx-banner__shot mx-banner__shot--b">
                 <img
                   src="/assets/images/banner-img2.jpg"
-                  alt="Medicines"
+                  alt="Pain relief aisle at Maxim Pharmacy"
                   className="img-fluid"
                 />
-                <span className="mx-banner__shot-label">Ready to deliver</span>
+                <span className="mx-banner__shot-label">In-store aisle</span>
               </figure>
             </div>
 
