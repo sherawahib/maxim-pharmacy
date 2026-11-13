@@ -181,25 +181,36 @@
   top: 4px;
   font-size: 88px;
   line-height: 1;
-  color: rgba(12, 35, 64, 0.08);
+  color: rgba(200, 16, 46, 0.18) !important;
   font-weight: 700;
   pointer-events: none;
 }
 
 .mx-testimonials__stars {
   display: inline-flex;
-  gap: 5px;
-  color: #c8102e;
-  font-size: 14px;
+  gap: 6px;
+  color: #e6a800 !important;
+  font-size: 15px;
   margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.mx-testimonials__stars i,
+.mx-testimonials__stars .fa-star {
+  color: #e6a800 !important;
+  -webkit-text-fill-color: #e6a800 !important;
+  opacity: 1 !important;
 }
 
 .mx-testimonials__quote {
   margin: 0;
-  color: #0c2340;
+  color: #0c2340 !important;
   font-size: clamp(17px, 2vw, 22px);
   line-height: 1.65;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
 .mx-testimonials__author {
