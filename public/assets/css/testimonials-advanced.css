@@ -8,6 +8,16 @@
   box-shadow: 0 30px 70px -34px rgba(12, 35, 64, 0.55);
 }
 
+/* Override legacy `.client-review-slider * { color: white }` */
+.mx-testimonials.client-review-slider .mx-testimonials__card,
+.mx-testimonials.client-review-slider .mx-testimonials__card * {
+  color: inherit;
+}
+
+.mx-testimonials.client-review-slider .mx-testimonials__card {
+  color: #0c2340;
+}
+
 .mx-testimonials__photo {
   position: absolute;
   inset: 0;
@@ -232,7 +242,7 @@
 
 .mx-testimonials__author h4 {
   margin: 0 0 2px;
-  color: #0c2340;
+  color: #0c2340 !important;
   font-size: 16px;
   font-weight: 800;
   text-align: left;
@@ -240,7 +250,7 @@
 
 .mx-testimonials__author p {
   margin: 0;
-  color: #6b7c90;
+  color: #6b7c90 !important;
   font-size: 13px;
   text-align: left;
 }
