@@ -5,12 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "@/html-port/SiteHeader";
 
 const pillars = ["Health", "Trust", "Online"];
-const users = [
-  "/assets/images/user1.png",
-  "/assets/images/user2.png",
-  "/assets/images/user3.png",
-  "/assets/images/user4.png",
-];
 
 const trust = [
   {
@@ -62,29 +56,11 @@ const trust = [
 export function HomeBanner() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState("");
-  const [count, setCount] = useState(0);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const t = window.setTimeout(() => setReady(true), 40);
     return () => window.clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    let frame = 0;
-    const target = 4;
-    const start = performance.now();
-    const duration = 1400;
-
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setCount(Math.round(target * eased));
-      if (p < 1) frame = requestAnimationFrame(tick);
-    };
-
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
@@ -111,7 +87,7 @@ export function HomeBanner() {
 
           <div className="wrapper1560">
             <div className="row align-items-start mx-banner__top g-3 g-lg-4">
-              <div className="col-12 col-lg-7">
+              <div className="col-12 col-lg-8">
                 <div className="banner-content-left-con mx-banner__left">
                   <ul className="list-unstyled d-flex mx-banner__pills">
                     {pillars.map((p) => (
@@ -178,60 +154,6 @@ export function HomeBanner() {
                       </button>
                     </div>
                   ) : null}
-                </div>
-              </div>
-
-              <div className="col-12 col-lg-5">
-                <div className="banner-content-right-con mx-banner__right">
-                  <div className="mx-banner__panel">
-                    <div className="user-box d-flex mx-banner__users">
-                      <div className="d-flex imgz-wrap">
-                        {users.map((src, i) => (
-                          <img
-                            key={src}
-                            src={src}
-                            alt=""
-                            className={i === 0 ? "ml-0" : ""}
-                            style={{ zIndex: users.length - i }}
-                          />
-                        ))}
-                      </div>
-                      <div className="user-text flex-column">
-                        <div className="mx-banner__count">
-                          <span className="d-inline-block counter text-white">
-                            {count}
-                          </span>
-                          <span className="d-inline-block alphabet text-white">
-                            k
-                          </span>
-                          <sup className="d-inline-block text-white">+</sup>
-                        </div>
-                        <span className="span-text d-block text-white">
-                          Happy clients
-                        </span>
-                      </div>
-                    </div>
-
-                    <p className="text-white mx-banner__panel-copy">
-                      Same-day friendly fulfillment, discreet packaging, and
-                      real pharmacist follow-up when you need it.
-                    </p>
-
-                    <div className="mx-banner__stats">
-                      <div>
-                        <strong>24/7</strong>
-                        <span>Order online</span>
-                      </div>
-                      <div>
-                        <strong>100%</strong>
-                        <span>Licensed care</span>
-                      </div>
-                      <div>
-                        <strong>Free*</strong>
-                        <span>Delivery options</span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
