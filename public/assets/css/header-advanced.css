@@ -304,6 +304,15 @@
   line-height: 1;
 }
 
+.mx-lang__flag-img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(12, 35, 64, 0.12);
+  flex-shrink: 0;
+}
+
 .mx-lang__code {
   letter-spacing: 0.04em;
 }
@@ -398,16 +407,36 @@
 
 /* Hide Google Translate chrome — driven by our dropdown */
 .mx-gtranslate,
-.goog-te-banner-frame {
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
   display: none !important;
+  visibility: hidden !important;
 }
 
 body {
   top: 0 !important;
+  position: static !important;
 }
 
 .goog-te-gadget {
   font-size: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+font font {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .mx-burger {

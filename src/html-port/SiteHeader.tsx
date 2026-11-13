@@ -167,7 +167,7 @@ export function SiteHeader() {
             </li>
           </ul>
           <div className="mx-mobile__lang">
-            <p>Language / Idioma / Langue</p>
+            <p>Language / Ngôn ngữ</p>
             <LanguageSwitcher compact />
           </div>
           <a href="tel:+11234567890" className="mx-mobile__phone">
