@@ -1,17 +1,17 @@
-/* Advanced footer */
+/* Advanced footer — light header-matched theme */
 
 .mx-footer.footer-con {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background-color: #0b1522 !important;
+  background-color: #e8f4ff !important;
   background-image:
-    radial-gradient(circle at 12% 20%, rgba(27, 79, 130, 0.35), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(200, 16, 46, 0.18), transparent 38%),
-    linear-gradient(160deg, #0d1a2b 0%, #0b1522 55%, #101d30 100%) !important;
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.9), transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(27, 79, 130, 0.08), transparent 40%),
+    linear-gradient(165deg, #f4f9ff 0%, #e8f4ff 55%, #e3f0fb 100%) !important;
   background-size: cover !important;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 30px 70px -36px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(27, 79, 130, 0.1);
+  box-shadow: 0 24px 60px -36px rgba(12, 35, 64, 0.28);
 }
 
 .mx-footer__glow {
@@ -19,10 +19,10 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.35;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(12, 35, 64, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 35, 64, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at 30% 20%, black 10%, transparent 65%);
   -webkit-mask-image: radial-gradient(circle at 30% 20%, black 10%, transparent 65%);
@@ -42,13 +42,14 @@
   padding: 28px 28px;
   margin-bottom: 10px;
   border-radius: 20px;
-  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  box-shadow: 0 16px 36px -28px rgba(12, 35, 64, 0.35);
 }
 
 .mx-footer__eyebrow {
   margin: 0 0 6px;
-  color: #9ec0e8;
+  color: #1b4f82;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -57,7 +58,7 @@
 
 .mx-footer__cta h3 {
   margin: 0 0 6px;
-  color: #fff;
+  color: #0c2340;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.25;
@@ -65,7 +66,7 @@
 
 .mx-footer__cta p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #5f7388;
   font-size: 14px;
 }
 
@@ -92,7 +93,7 @@
 .mx-footer__btn-primary {
   background: #c8102e;
   color: #fff;
-  box-shadow: 0 12px 28px -12px rgba(200, 16, 46, 0.65);
+  box-shadow: 0 12px 28px -12px rgba(200, 16, 46, 0.55);
 }
 
 .mx-footer__btn-primary:hover {
@@ -102,13 +103,15 @@
 }
 
 .mx-footer__btn-ghost {
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
+  border: 1.5px solid rgba(12, 35, 64, 0.22);
+  color: #0c2340;
+  background: transparent;
 }
 
 .mx-footer__btn-ghost:hover {
-  background: #fff;
-  color: #0c2340;
+  background: #0c2340;
+  color: #fff;
+  border-color: #0c2340;
 }
 
 .mx-footer__main.middle_portion {
@@ -128,34 +131,38 @@
   max-width: 120px !important;
   margin-right: 0 !important;
   object-fit: contain !important;
+  /* Keep mark readable on light footer (header-matched) */
+  filter: none;
 }
 
 .mx-footer__brand-text {
-  color: #fff;
+  color: #0c2340;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
 }
 
 .mx-footer__brand-text em {
   font-style: normal;
-  color: #9ec0e8;
+  color: #1b4f82;
   display: block;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .mx-footer__blurb {
-  color: rgba(255, 255, 255, 0.68);
+  color: #5f7388;
   font-size: 14px;
   line-height: 1.6;
   max-width: 360px;
   margin-bottom: 22px;
 }
 
-.mx-footer__brand h4 {
+.mx-footer__brand h4,
+.mx-footer .logo-content h4 {
+  color: #0c2340 !important;
   font-size: 16px !important;
   margin-bottom: 12px !important;
 }
@@ -169,9 +176,9 @@
 
 .mx-footer__form input.form_style {
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: #fff !important;
+  border: 1px solid rgba(12, 35, 64, 0.14) !important;
+  background: #fff !important;
+  color: #0c2340 !important;
   height: 50px !important;
   min-width: 0 !important;
   margin-right: 0 !important;
@@ -180,7 +187,7 @@
 }
 
 .mx-footer__form input.form_style::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: #8a9aab;
 }
 
 .mx-footer__form button {
@@ -207,7 +214,6 @@
   font-size: 14px;
   line-height: 1;
   margin: 0;
-  /* paper-plane glyph sits optically left — nudge to center */
   transform: translateX(1px);
 }
 
@@ -223,11 +229,11 @@
 }
 
 .mx-footer__hint {
-  color: rgba(255, 255, 255, 0.45);
+  color: #8a9aab;
 }
 
 .mx-footer__thanks {
-  color: #7dcea0;
+  color: #1b7a4a;
   font-weight: 600;
 }
 
@@ -236,7 +242,7 @@
 }
 
 .mx-footer__col .heading {
-  color: #fff !important;
+  color: #0c2340 !important;
   font-size: 16px !important;
   margin-bottom: 16px !important;
   position: relative;
@@ -254,8 +260,45 @@
   background: #c8102e;
 }
 
+.mx-footer .links li {
+  color: #3d5470 !important;
+}
+
+.mx-footer .links li i {
+  color: #1b4f82 !important;
+}
+
+.mx-footer .links li a {
+  color: #3d5470 !important;
+}
+
+.mx-footer .links li:hover i,
+.mx-footer .links li:hover a {
+  color: #c8102e !important;
+}
+
+.mx-footer .contact .text {
+  color: #3d5470 !important;
+}
+
+.mx-footer .contact a,
+.mx-footer .contact p,
+.mx-footer .contact .address {
+  color: #3d5470 !important;
+}
+
+.mx-footer .contact i {
+  color: #0c2340 !important;
+}
+
+.mx-footer .contact li:hover a,
+.mx-footer .contact li:hover p,
+.mx-footer .contact li:hover i {
+  color: #c8102e !important;
+}
+
 .mx-footer__locations ul li {
-  color: rgba(255, 255, 255, 0.72);
+  color: #3d5470;
   font-size: 14px;
   margin-bottom: 10px;
   padding-left: 12px;
@@ -270,7 +313,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #60b0d2;
+  background: #1b4f82;
 }
 
 .mx-footer__social {
@@ -291,27 +334,30 @@
   height: 40px !important;
   line-height: 40px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  background: #fff !important;
+  color: #0c2340 !important;
+  border: 1px solid rgba(12, 35, 64, 0.12);
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .mx-footer__social .social-icons a:hover i {
   background: #c8102e !important;
   color: #fff !important;
+  border-color: #c8102e;
   transform: translateY(-2px);
 }
 
 .mx-footer__copy.copyright {
   margin-top: 8px;
   padding-top: 18px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(12, 35, 64, 0.1);
   gap: 16px;
   flex-wrap: wrap;
 }
 
 .mx-footer__copy p {
-  color: rgba(255, 255, 255, 0.55) !important;
+  color: #6b7c90 !important;
 }
 
 .mx-footer__copy-right {
@@ -322,7 +368,7 @@
 }
 
 .mx-footer__copy-right span {
-  color: rgba(255, 255, 255, 0.45);
+  color: #8a9aab;
   font-size: 12px;
 }
 

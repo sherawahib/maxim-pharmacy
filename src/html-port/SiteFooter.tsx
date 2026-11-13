@@ -72,7 +72,7 @@ export function SiteFooter() {
                       Trusted care, delivered with confidence. Licensed pharmacists,
                       secure checkout, and local delivery.
                     </p>
-                    <h4 className="text-white">Subscribe to Our Newsletter</h4>
+                    <h4>Subscribe to Our Newsletter</h4>
                     <form onSubmit={onSubmit}>
                       <div className="form-group position-relative mb-0 mx-footer__form">
                         <input
